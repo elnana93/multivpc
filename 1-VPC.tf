@@ -12,6 +12,7 @@ output "vpc_ids" {
     app1_id      = aws_vpc.vpc["app1"].id
     private1_id  = aws_vpc.vpc["private1"].id
     security1_id = aws_vpc.vpc["security1"].id
+    shared1_id   = aws_vpc.vpc["shared1"].id
   }
 }
 

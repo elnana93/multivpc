@@ -50,3 +50,21 @@ resource "aws_subnet" "security1_subnets" {
     Network = each.value.is_public ? "Public" : "Private"
   }
 }
+
+
+resource "aws_subnet" "shared1_subnets" {
+
+  for_each = var.shared1_subnets
+
+  vpc_id            = aws_vpc.vpc["shared1"].id
+  cidr_block        = each.value.cidr_block
+  availability_zone = each.value.az
+
+  map_public_ip_on_launch = each.value.is_public
+
+  tags = {
+    Name = "shared1-${each.key}"
+
+    Network = each.value.is_public ? "Public" : "Private"
+  }
+}
