@@ -63,20 +63,8 @@ variable "shared1_subnets" { # <-- MISSING VARIABLE DEFINED
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 variable "app1_subnets" { # <-- MISSING VARIABLE DEFINED
-  description = "Configuration for the public and private subnets in the private1 VPC."
+  description = "Configuration for the public and private subnets in the app1 VPC."
   type = map(object({
     cidr_block = string
     az         = string
