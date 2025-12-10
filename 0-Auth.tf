@@ -12,7 +12,7 @@ terraform {
 }
 
 
-
+#organize notes later
 
 # cd desktop/e5tech/aws/lab2.2
 #terraform fmt - to fix your lines 
