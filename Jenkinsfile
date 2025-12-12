@@ -1,5 +1,3 @@
-
-
 pipeline {
     agent any
     
@@ -12,10 +10,6 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                // 1. CLEAN: Wipes the folder clean before starting
-                cleanWs() 
-                
-                // 2. CLONE: Downloads a fresh copy of your code
                 git branch: 'main', url: 'https://github.com/elnana93/multivpc.git'
             }
         }
@@ -28,13 +22,13 @@ pipeline {
         
         stage('Terraform Plan') {
             steps {
-                sh 'terraform plan -out=tfplan' 
+                sh 'terraform plan -out=tfplan'
             }
         }
 
         stage('Terraform Apply') {
             steps {
-                sh 'terraform apply -auto-approve tfplan' 
+                sh 'terraform apply -auto-approve tfplan'
             }
         }
     }
