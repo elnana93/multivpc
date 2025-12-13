@@ -24,9 +24,11 @@ terraform {
 # "curl ifconfig.me" - hit this on bash to find your cidr block aka ip address
 
 
+
+# this is for github actions deployment
 #for exsisting plays
 # git status
 # git add assets/index.html
 # git add .github/workflows/deploy.yml
-# git commit -m "Add fixed deploy workflow"
+# git commit -m "Lets gooo"
 # git push

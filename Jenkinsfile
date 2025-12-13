@@ -26,11 +26,12 @@ pipeline {
             }
         }
 
-        stage('Terraform Apply') {
-            steps {
-                sh 'terraform apply -auto-approve tfplan'
-            }
-        }
+        stage('Terraform Destroy') {
+    steps {
+        sh 'terraform destroy -auto-approve'
+    }
+
+} 
     }
 }
 
@@ -43,5 +44,17 @@ pipeline {
     steps {
         sh 'terraform destroy -auto-approve'
     }
-    
-} */
+
+} 
+
+
+
+stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply -auto-approve tfplan'
+            }
+        }
+
+
+
+*/
