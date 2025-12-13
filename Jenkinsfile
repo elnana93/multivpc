@@ -26,11 +26,22 @@ pipeline {
             }
         }
 
-        stage('Terraform Destroy') {
-    steps {
-        sh 'terraform destroy -auto-approve'
+        stage('Terraform Apply') {
+            steps {
+                sh 'terraform apply -auto-approve tfplan'
+            }
+        }
     }
 }
 
+
+
+/*
+/use this stage to destroy the infrastructure when needed
+
+ stage('Terraform Destroy') {
+    steps {
+        sh 'terraform destroy -auto-approve'
     }
-}
+    
+} */
